@@ -43,11 +43,7 @@ export const updateName = async (req, res) => {
         const { id } = req.params;
         const { name } = req.body;
 
-        const user = await User.findByIdAndUpdate(
-            id,
-            { name },
-            { new: true, runValidators: true }
-        ).select("-password");
+        const user = await User.findByIdAndUpdate(id, { name }, { new: true, runValidators: true }).select("-password");
 
         if (!user) {
             return res.status(404).json({ message: "User not found" });

@@ -4,12 +4,13 @@ import cors from "cors";
 import morgan from "morgan";
 import connectDB from "./database/db.js";
 import userRouter from "./routes/user.route.js";
+import authRouter from "./routes/auth.route.js";
 
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT;
 
-app.use(morgan("tiny"));
+app.use(morgan("dev"));
 app.use(
     cors({
         origin: process.env.CORS_ORIGIN,
@@ -30,6 +31,7 @@ app.use(
 
 // Routes
 app.use("/api/v1", userRouter);
+app.use("/api/v1", authRouter);
 
 app.use("*", (req, res) => res.status(404).json({ error: "ROUTE NOT FOUND", code: 404 }));
 
