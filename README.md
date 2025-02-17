@@ -3,7 +3,7 @@
 Boilerplate Backend, 
 
 
-To start first create a ```<b>.env</b>``` file and copy paste from ```<b>.env.example</b>``` file which has all the environment variables we need.
+To start first create a <b>.env</b> file and copy paste from <b>.env.example</b> file which has all the environment variables we need.
 
 Next make sure you have nodeJS installed, if you dont have it then install it from here,
 ```https://nodejs.org/en```
